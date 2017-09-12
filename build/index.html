@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<base href="/">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> A-Frame Testing </title>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+
+	<link rel="stylesheet" href="css/app.css" inline>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.min.js"></script>
+	<script src="js/modernizr.js" async></script>
+</head>
+<body>
+	<a-scene id="scene" fog="type: linear; color: #121212; near: 3; far: 8;">
+
+			<!-- ASSETS -->
+      <a-assets>
+        <img id="skyboxImg" src="images/skybox.png">
+				<a-asset-item id="lampObj" src="images/lamp.obj"></a-asset-item>
+      </a-assets>
+
+      <!-- Controls / View -->
+      <a-entity id="camera">
+        <a-camera wasd-controls-enabled="true">
+					<a-entity cursor="fuse: true; fuseTimeout: 500"
+						position="0 0 -1"
+						geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+						material="color: lightblue; shader: flat;" >
+					<a-entity>
+				</a-camera>
+      </a-entity>
+
+			<!-- TIMELINE -->
+      <a-entity id="timeline"></a-entity>
+
+      <!-- SKYBOX -->
+      <a-sky id="skybox" src="#skyboxImg"></a-sky>
+
+  </a-scene>
+	<script src="js/main.js" async defer></script>
+</body>
+</html>
